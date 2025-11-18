@@ -93,7 +93,7 @@ class Debugger:
 
         # Create new user prompt
         prompt = PromptLoader().load_debugger_prompt(
-            plan, query, wayang_errors, val_errors
+            query, plan, wayang_errors, val_errors
         )
 
         # Add user prompt to chat
