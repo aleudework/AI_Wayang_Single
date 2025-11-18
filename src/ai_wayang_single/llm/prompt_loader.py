@@ -85,7 +85,7 @@ class PromptLoader:
             failed_plan = json.dumps(failed_plan.model_dump(), indent=4)
         elif hasattr(failed_plan, "to_json"):
             failed_plan = failed_plan.to_json(indent=4)
-        else:
+        elif not isinstance(wayang_errors, str):
             failed_plan = json.dumps(failed_plan.__dict__, indent=4)
 
         # Convert to JSON

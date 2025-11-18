@@ -1,5 +1,6 @@
 # Import libraries
 from mcp.server.fastmcp import FastMCP
+from typing import Optional
 from ai_wayang_single.config.settings import MCP_CONFIG, INPUT_CONFIG, OUTPUT_CONFIG, DEBUGGER_MODEL_CONFIG
 from ai_wayang_single.llm.agent_builder import Builder
 from ai_wayang_single.llm.agent_debugger import Debugger
@@ -32,7 +33,7 @@ wayang_executor = WayangExecutor() # Wayang executor
 last_session_result = "Nothing to output"
 
 @mcp.tool()
-def query_wayang(describe_wayang_plan: str, model: str | None = None, reasoning: str | None = None) -> str:
+def query_wayang(describe_wayang_plan: str, model: Optional[str] = None, reasoning: Optional[str] = None, use_debugger: Optional[str] = "True") -> str:
     """
     Generates and execute a Wayang plan based on given query in national language.
     The query provided must be in Englis
@@ -61,6 +62,7 @@ def query_wayang(describe_wayang_plan: str, model: str | None = None, reasoning:
         # Set up logger 
         logger = Logger()
         logger.add_message("User query: Plan description from client LLM", describe_wayang_plan)
+        logger.add_message("Architecture", {"model": model, "architecture": "multi", "debugger": use_debugger})
         
         # Initialize variables
         status_code = None # Status code from validator or Wayang server
@@ -130,7 +132,7 @@ def query_wayang(describe_wayang_plan: str, model: str | None = None, reasoning:
         ### --- Debug Plan --- ###
         
         # Check if debugger should be used
-        use_debugger = DEBUGGER_MODEL_CONFIG.get("use_debugger")
+        #use_debugger = DEBUGGER_MODEL_CONFIG.get("use_debugger")
 
         # Use debugger if true
         if use_debugger == "True" and status_code != 200:
@@ -152,7 +154,7 @@ def query_wayang(describe_wayang_plan: str, model: str | None = None, reasoning:
                 print(f"[INFO] PlanMapper Simplifies JSON")
 
                 # Debug plan
-                response = debugger_agent.debug_plan(failed_plan, wayang_errors=result, val_errors=val_errors) # Debug plan
+                response = debugger_agent.debug_plan(describe_wayang_plan, failed_plan, wayang_errors=result, val_errors=val_errors) # Debug plan
                 version = debugger_agent.get_version() # Current plan version
                 raw_plan = response.get("wayang_plan") # Get only the debugged plan
                 print("[INFO] Plan debugged by debugger")
