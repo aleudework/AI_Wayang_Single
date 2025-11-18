@@ -62,7 +62,7 @@ def query_wayang(describe_wayang_plan: str, model: Optional[str] = None, reasoni
         # Set up logger 
         logger = Logger()
         logger.add_message("User query: Plan description from client LLM", describe_wayang_plan)
-        logger.add_message("Architecture", {"model": model, "architecture": "multi", "debugger": use_debugger})
+        logger.add_message("Architecture", {"model": model, "architecture": "Single", "debugger": use_debugger})
         
         # Initialize variables
         status_code = None # Status code from validator or Wayang server
