@@ -1,0 +1,169 @@
+** User query: **
+Show me a list of all people and their addresses. Only include people with valid emails. For each person, add an age category where ages under 18 are ‘minor’, ages 18–65 are ‘adult’, and ages above 65 are ‘senior’. Group by age category and count how many are in each categories. Output in textfile
+
+** Wayang plan: **
+{
+                "context": {
+                    "platforms": [
+                        "java"
+                    ],
+                    "configuration": {}
+                },
+                "operators": [
+                    {
+                        "id": 1,
+                        "cat": "input",
+                        "input": [],
+                        "output": [
+                            2
+                        ],
+                        "operatorName": "jdbcRemoteInput",
+                        "data": {
+                            "uri": "jdbc:postgresql://localhost:5432/master_thesis_db",
+                            "username": "master_thesis",
+                            "password": "master",
+                            "table": "(SELECT id, navn, alder, email FROM person_test) as X",
+                            "columnNames": [
+                                "id",
+                                "navn",
+                                "alder",
+                                "email"
+                            ]
+                        }
+                    },
+                    {
+                        "id": 2,
+                        "cat": "unary",
+                        "input": [
+                            1
+                        ],
+                        "output": [
+                            3
+                        ],
+                        "operatorName": "filter",
+                        "data": {
+                            "udf": "(r: org.apache.wayang.basic.data.Record) => { val e = r.getField(3).toString.trim; e.nonEmpty && e.matches(\"^[^@\\\\s]+@[^@\\\\s]+\\\\.[^@\\\\s]+$\") }"
+                        }
+                    },
+                    {
+                        "id": 3,
+                        "cat": "unary",
+                        "input": [
+                            2
+                        ],
+                        "output": [
+                            6
+                        ],
+                        "operatorName": "map",
+                        "data": {
+                            "udf": "(r: org.apache.wayang.basic.data.Record) => { val id = r.getField(0).asInstanceOf[Int]; val navn = r.getField(1).toString; val alder = r.getField(2).asInstanceOf[Int]; val cat = if (alder < 18) \"minor\" else if (alder <= 65) \"adult\" else \"senior\"; (id, navn, cat) }"
+                        }
+                    },
+                    {
+                        "id": 4,
+                        "cat": "input",
+                        "input": [],
+                        "output": [
+                            5
+                        ],
+                        "operatorName": "jdbcRemoteInput",
+                        "data": {
+                            "uri": "jdbc:postgresql://localhost:5432/master_thesis_db",
+                            "username": "master_thesis",
+                            "password": "master",
+                            "table": "(SELECT person_id, vejnavn, postnummer, by FROM adresse_test) as X",
+                            "columnNames": [
+                                "person_id",
+                                "vejnavn",
+                                "postnummer",
+                                "by"
+                            ]
+                        }
+                    },
+                    {
+                        "id": 5,
+                        "cat": "unary",
+                        "input": [
+                            4
+                        ],
+                        "output": [
+                            6
+                        ],
+                        "operatorName": "map",
+                        "data": {
+                            "udf": "(r: org.apache.wayang.basic.data.Record) => { val pid = r.getField(0).asInstanceOf[Int]; val addr = s\"${r.getField(1).toString} ${r.getField(2).toString} ${r.getField(3).toString}\"; (pid, addr) }"
+                        }
+                    },
+                    {
+                        "id": 6,
+                        "cat": "binary",
+                        "input": [
+                            3,
+                            5
+                        ],
+                        "output": [
+                            7
+                        ],
+                        "operatorName": "join",
+                        "data": {
+                            "thisKeyUdf": "(t: (Int, String, String)) => t._1",
+                            "thatKeyUdf": "(a: (Int, String)) => a._1"
+                        }
+                    },
+                    {
+                        "id": 7,
+                        "cat": "unary",
+                        "input": [
+                            6
+                        ],
+                        "output": [
+                            8
+                        ],
+                        "operatorName": "map",
+                        "data": {
+                            "udf": "(t: ((Int, String, String), (Int, String))) => (t._1._3, 1)"
+                        }
+                    },
+                    {
+                        "id": 8,
+                        "cat": "unary",
+                        "input": [
+                            7
+                        ],
+                        "output": [
+                            9
+                        ],
+                        "operatorName": "reduceBy",
+                        "data": {
+                            "keyUdf": "(t: (String, Int)) => t._1",
+                            "udf": "(a: (String, Int), b: (String, Int)) => (a._1, a._2 + b._2)"
+                        }
+                    },
+                    {
+                        "id": 9,
+                        "cat": "unary",
+                        "input": [
+                            8
+                        ],
+                        "output": [
+                            10
+                        ],
+                        "operatorName": "map",
+                        "data": {
+                            "udf": "(t: (String, Int)) => s\"${t._1} | ${t._2}\""
+                        }
+                    },
+                    {
+                        "id": 10,
+                        "cat": "output",
+                        "input": [
+                            9
+                        ],
+                        "output": [],
+                        "operatorName": "textFileOutput",
+                        "data": {
+                            "filename": "file:///Users/alexander/Wayang_Data/Output/output_20251119_210757.txt"
+                        }
+                    }
+                ]
+            }

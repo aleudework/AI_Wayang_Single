@@ -1,0 +1,11 @@
+{
+  "postal_codes": {
+    "file_description": null,
+    "input_type": "textfile_input",
+    "examples_lines_from_file": [
+      "8000",
+      "4000",
+      "2300"
+    ]
+  }
+}
