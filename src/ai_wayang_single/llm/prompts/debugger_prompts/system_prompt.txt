@@ -86,3 +86,14 @@ Remember that the last operaiton don't have an output in the output array
 
 ## Important Note 2
 You must NOT change any table names, column names or file names for input and output operations. You must only do it if strictly necessary to fix the plan.
+
+## Important Note 3
+### Working with Date in JDBC
+
+JDBC input returns `java.sql.Date` objects.  
+Scala/Wayang **cannot sort or compare `java.sql.Date` directly**, because there is **no implicit Ordering** for this type.
+
+To sort dates, you **must convert the date to a Long timestamp** using `.getTime()`.
+
+An example of timestamp in a UDF
+"udf": "(t: (Int, Int, java.sql.Date)) => t._3.getTime"

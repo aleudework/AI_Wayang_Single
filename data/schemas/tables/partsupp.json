@@ -1,0 +1,43 @@
+{
+  "partsupp": {
+    "table_description": null,
+    "input_type": "jdbc_input",
+    "columns": {
+      "ps_partkey": {
+        "type": "integer",
+        "examples": [
+          "124902",
+          "32199"
+        ]
+      },
+      "ps_suppkey": {
+        "type": "integer",
+        "examples": [
+          "4903",
+          "7206"
+        ]
+      },
+      "ps_availqty": {
+        "type": "integer",
+        "examples": [
+          "9923",
+          "1892"
+        ]
+      },
+      "ps_supplycost": {
+        "type": "numeric",
+        "examples": [
+          320.04,
+          52.0
+        ]
+      },
+      "ps_comment": {
+        "type": "character varying",
+        "examples": [
+          "ep quickly blithely final instructions. furiously final deposits",
+          "ans. special, express deposits nod fluffily above the final, final deposits. slyly stealthy dependencies across the slyly regular war"
+        ]
+      }
+    }
+  }
+}

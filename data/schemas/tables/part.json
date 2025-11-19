@@ -1,0 +1,71 @@
+{
+  "part": {
+    "table_description": null,
+    "input_type": "jdbc_input",
+    "columns": {
+      "p_partkey": {
+        "type": "integer",
+        "examples": [
+          "93221",
+          "159237"
+        ]
+      },
+      "p_name": {
+        "type": "character varying",
+        "examples": [
+          "powder midnight grey lace indian",
+          "forest orange midnight lace light"
+        ]
+      },
+      "p_mfgr": {
+        "type": "character varying",
+        "examples": [
+          "Manufacturer#5",
+          "Manufacturer#4"
+        ]
+      },
+      "p_brand": {
+        "type": "character varying",
+        "examples": [
+          "Brand#55",
+          "Brand#44"
+        ]
+      },
+      "p_type": {
+        "type": "character varying",
+        "examples": [
+          "SMALL POLISHED COPPER",
+          "STANDARD BURNISHED STEEL"
+        ]
+      },
+      "p_size": {
+        "type": "integer",
+        "examples": [
+          "43",
+          "24"
+        ]
+      },
+      "p_container": {
+        "type": "character varying",
+        "examples": [
+          "LG CASE",
+          "WRAP PACK"
+        ]
+      },
+      "p_retailprice": {
+        "type": "numeric",
+        "examples": [
+          1214.22,
+          1296.23
+        ]
+      },
+      "p_comment": {
+        "type": "character varying",
+        "examples": [
+          "carefully a",
+          " ideas. fl"
+        ]
+      }
+    }
+  }
+}

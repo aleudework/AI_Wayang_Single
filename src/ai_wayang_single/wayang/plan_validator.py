@@ -30,12 +30,12 @@ class PlanValidator:
                 # Check input ids are lower than id
                 for input_id in op_input:
                     if input_id >= op_id:
-                        errors.append(f"Operation id {op_id}: Input id {input_id} ≥ operation id")
+                        errors.append(f"Operation id {op_id}: Input id {input_id} ≥ operation id. Input ids must be smaller than operation id")
 
                 # Check output ids are higher than id
                 for output_id in op_output:
                     if output_id <= op_id:
-                        errors.append(f"Operation id {op_id}: Output id {output_id} ≤ operation id")
+                        errors.append(f"Operation id {op_id}: Output id {output_id} ≤ operation id. Output ids must be larger than operation id")
                 
                 if op_cat == "unary":
 

@@ -1,0 +1,29 @@
+{
+  "region": {
+    "table_description": null,
+    "input_type": "jdbc_input",
+    "columns": {
+      "r_regionkey": {
+        "type": "integer",
+        "examples": [
+          "3",
+          "1"
+        ]
+      },
+      "r_name": {
+        "type": "character varying",
+        "examples": [
+          "EUROPE",
+          "AMERICA"
+        ]
+      },
+      "r_comment": {
+        "type": "character varying",
+        "examples": [
+          "ly final courts cajole furiously final excuse",
+          "hs use ironic, even requests. s"
+        ]
+      }
+    }
+  }
+}

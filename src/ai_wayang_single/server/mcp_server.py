@@ -33,7 +33,7 @@ wayang_executor = WayangExecutor() # Wayang executor
 last_session_result = "Nothing to output"
 
 @mcp.tool()
-def query_wayang(describe_wayang_plan: str, model: Optional[str] = None, reasoning: Optional[str] = None, use_debugger: Optional[str] = "True") -> str:
+def query_wayang(describe_wayang_plan: str, model: Optional[str] = "gpt-5-nano", reasoning: Optional[str] = "low", use_debugger: Optional[str] = "True") -> str:
     """
     Generates and execute a Wayang plan based on given query in national language.
     The query provided must be in Englis
