@@ -1,0 +1,120 @@
+{
+  "lineitem": {
+    "table_description": null,
+    "input_type": "jdbc_input",
+    "columns": {
+      "l_orderkey": {
+        "type": "integer",
+        "examples": [
+          "1963428",
+          "4130850"
+        ]
+      },
+      "l_partkey": {
+        "type": "integer",
+        "examples": [
+          "167440",
+          "167437"
+        ]
+      },
+      "l_suppkey": {
+        "type": "integer",
+        "examples": [
+          "9957",
+          "9954"
+        ]
+      },
+      "l_linenumber": {
+        "type": "integer",
+        "examples": [
+          "3",
+          "2"
+        ]
+      },
+      "l_quantity": {
+        "type": "numeric",
+        "examples": [
+          11.0,
+          21.0
+        ]
+      },
+      "l_extendedprice": {
+        "type": "numeric",
+        "examples": [
+          16581.84,
+          31593.03
+        ]
+      },
+      "l_discount": {
+        "type": "numeric",
+        "examples": [
+          0.06,
+          0.04
+        ]
+      },
+      "l_tax": {
+        "type": "numeric",
+        "examples": [
+          0.08,
+          0.06
+        ]
+      },
+      "l_returnflag": {
+        "type": "character",
+        "examples": [
+          "N",
+          "R"
+        ]
+      },
+      "l_linestatus": {
+        "type": "character",
+        "examples": [
+          "O",
+          "F"
+        ]
+      },
+      "l_shipdate": {
+        "type": "date",
+        "examples": [
+          "1996-08-02",
+          "1993-10-10"
+        ]
+      },
+      "l_commitdate": {
+        "type": "date",
+        "examples": [
+          "1996-08-29",
+          "1993-12-14"
+        ]
+      },
+      "l_receiptdate": {
+        "type": "date",
+        "examples": [
+          "1996-08-07",
+          "1993-10-20"
+        ]
+      },
+      "l_shipinstruct": {
+        "type": "character varying",
+        "examples": [
+          "NONE",
+          "TAKE BACK RETURN"
+        ]
+      },
+      "l_shipmode": {
+        "type": "character varying",
+        "examples": [
+          "RAIL",
+          "RAIL"
+        ]
+      },
+      "l_comment": {
+        "type": "character varying",
+        "examples": [
+          "careful requests boost carefully unus",
+          ". ruthlessly final pinto beans use. "
+        ]
+      }
+    }
+  }
+}

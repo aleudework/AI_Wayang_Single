@@ -1,0 +1,36 @@
+{
+  "nation": {
+    "table_description": null,
+    "input_type": "jdbc_input",
+    "columns": {
+      "n_nationkey": {
+        "type": "integer",
+        "examples": [
+          "7",
+          "0"
+        ]
+      },
+      "n_name": {
+        "type": "character varying",
+        "examples": [
+          "GERMANY",
+          "ALGERIA"
+        ]
+      },
+      "n_regionkey": {
+        "type": "integer",
+        "examples": [
+          "3",
+          "0"
+        ]
+      },
+      "n_comment": {
+        "type": "character varying",
+        "examples": [
+          "l platelets. regular accounts x-ray: unusual, regular acco",
+          " haggle. carefully final deposits detect slyly agai"
+        ]
+      }
+    }
+  }
+}

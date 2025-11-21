@@ -1,9 +1,0 @@
-{
-  "my_textfile": {
-    "file_description": null,
-    "input_type": "textfile_input",
-    "examples_lines_from_file": [
-      "This is my textfile and I like this file"
-    ]
-  }
-}

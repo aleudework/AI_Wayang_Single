@@ -1,0 +1,71 @@
+{
+  "orders": {
+    "table_description": null,
+    "input_type": "jdbc_input",
+    "columns": {
+      "o_orderkey": {
+        "type": "integer",
+        "examples": [
+          "190529",
+          "1000485"
+        ]
+      },
+      "o_custkey": {
+        "type": "integer",
+        "examples": [
+          "63820",
+          "29068"
+        ]
+      },
+      "o_orderstatus": {
+        "type": "character",
+        "examples": [
+          "F",
+          "O"
+        ]
+      },
+      "o_totalprice": {
+        "type": "numeric",
+        "examples": [
+          411778.41,
+          283623.11
+        ]
+      },
+      "o_orderdate": {
+        "type": "date",
+        "examples": [
+          "1993-10-23",
+          "1997-05-14"
+        ]
+      },
+      "o_orderpriority": {
+        "type": "character",
+        "examples": [
+          "3-MEDIUM       ",
+          "2-HIGH         "
+        ]
+      },
+      "o_clerk": {
+        "type": "character",
+        "examples": [
+          "Clerk#000000028",
+          "Clerk#000000126"
+        ]
+      },
+      "o_shippriority": {
+        "type": "integer",
+        "examples": [
+          "0",
+          "0"
+        ]
+      },
+      "o_comment": {
+        "type": "character varying",
+        "examples": [
+          "uffily blithe instructions. brave, bold packages nag fluf",
+          "ding dependencies? carefully s"
+        ]
+      }
+    }
+  }
+}

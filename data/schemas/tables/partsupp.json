@@ -1,0 +1,43 @@
+{
+  "partsupp": {
+    "table_description": null,
+    "input_type": "jdbc_input",
+    "columns": {
+      "ps_partkey": {
+        "type": "integer",
+        "examples": [
+          "31296",
+          "111452"
+        ]
+      },
+      "ps_suppkey": {
+        "type": "integer",
+        "examples": [
+          "8806",
+          "8986"
+        ]
+      },
+      "ps_availqty": {
+        "type": "integer",
+        "examples": [
+          "733",
+          "1718"
+        ]
+      },
+      "ps_supplycost": {
+        "type": "numeric",
+        "examples": [
+          160.08,
+          712.34
+        ]
+      },
+      "ps_comment": {
+        "type": "character varying",
+        "examples": [
+          "en requests. carefully bold excuses sleep. furiously final accounts haggle blithely across the fluffily even asymptotes. blithely even platelets wake according to the carefull",
+          "ites. carefully even instructions ought to haggle carefully. blithely regular ideas nod ideas. blithely regular accounts wake even req"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "customer": {
+    "table_description": null,
+    "input_type": "jdbc_input",
+    "columns": {
+      "c_custkey": {
+        "type": "integer",
+        "examples": [
+          "74664",
+          "116077"
+        ]
+      },
+      "c_name": {
+        "type": "character varying",
+        "examples": [
+          "Customer#000074664",
+          "Customer#000116077"
+        ]
+      },
+      "c_address": {
+        "type": "character varying",
+        "examples": [
+          " DV9sqXL4LTG4hOIxrA8KZIvtSxPz",
+          "TfvLMVt1uPHikjT2h"
+        ]
+      },
+      "c_nationkey": {
+        "type": "integer",
+        "examples": [
+          "15",
+          "19"
+        ]
+      },
+      "c_phone": {
+        "type": "character varying",
+        "examples": [
+          "25-259-432-1946",
+          "29-832-827-7465"
+        ]
+      },
+      "c_acctbal": {
+        "type": "numeric",
+        "examples": [
+          -479.92,
+          4745.95
+        ]
+      },
+      "c_mktsegment": {
+        "type": "character varying",
+        "examples": [
+          "MACHINERY",
+          "MACHINERY"
+        ]
+      },
+      "c_comment": {
+        "type": "character varying",
+        "examples": [
+          "e furiously fluffily regular platelets. furiously careful packages are furiously abou",
+          "ts. even deposits haggle. carefully special instructions against the brave"
+        ]
+      }
+    }
+  }
+}

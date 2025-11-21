@@ -1,0 +1,57 @@
+{
+  "supplier": {
+    "table_description": null,
+    "input_type": "jdbc_input",
+    "columns": {
+      "s_suppkey": {
+        "type": "integer",
+        "examples": [
+          "2679",
+          "1196"
+        ]
+      },
+      "s_name": {
+        "type": "character varying",
+        "examples": [
+          "Supplier#000002679",
+          "Supplier#000001196"
+        ]
+      },
+      "s_address": {
+        "type": "character varying",
+        "examples": [
+          "MaiB0O77I5cCcE9w",
+          "fB1EzFKsyF iBFX7AkImgUp"
+        ]
+      },
+      "s_nationkey": {
+        "type": "integer",
+        "examples": [
+          "4",
+          "17"
+        ]
+      },
+      "s_phone": {
+        "type": "character varying",
+        "examples": [
+          "14-228-859-6923",
+          "27-437-746-4848"
+        ]
+      },
+      "s_acctbal": {
+        "type": "numeric",
+        "examples": [
+          6030.75,
+          6729.76
+        ]
+      },
+      "s_comment": {
+        "type": "character varying",
+        "examples": [
+          "s are slyly. furiously regular mu",
+          "ckages. ideas haggle slyly. even f"
+        ]
+      }
+    }
+  }
+}

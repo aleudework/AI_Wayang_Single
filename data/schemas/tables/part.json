@@ -1,0 +1,71 @@
+{
+  "part": {
+    "table_description": null,
+    "input_type": "jdbc_input",
+    "columns": {
+      "p_partkey": {
+        "type": "integer",
+        "examples": [
+          "136140",
+          "122382"
+        ]
+      },
+      "p_name": {
+        "type": "character varying",
+        "examples": [
+          "black wheat almond cornflower rose",
+          "rose mint turquoise moccasin tomato"
+        ]
+      },
+      "p_mfgr": {
+        "type": "character varying",
+        "examples": [
+          "Manufacturer#2",
+          "Manufacturer#2"
+        ]
+      },
+      "p_brand": {
+        "type": "character varying",
+        "examples": [
+          "Brand#22",
+          "Brand#23"
+        ]
+      },
+      "p_type": {
+        "type": "character varying",
+        "examples": [
+          "PROMO BURNISHED NICKEL",
+          "MEDIUM ANODIZED BRASS"
+        ]
+      },
+      "p_size": {
+        "type": "integer",
+        "examples": [
+          "44",
+          "35"
+        ]
+      },
+      "p_container": {
+        "type": "character varying",
+        "examples": [
+          "SM BOX",
+          "JUMBO DRUM"
+        ]
+      },
+      "p_retailprice": {
+        "type": "numeric",
+        "examples": [
+          1176.14,
+          1404.38
+        ]
+      },
+      "p_comment": {
+        "type": "character varying",
+        "examples": [
+          " account",
+          "sly fu"
+        ]
+      }
+    }
+  }
+}

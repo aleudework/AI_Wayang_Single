@@ -171,7 +171,7 @@ def query_wayang(describe_wayang_plan: str, model: Optional[str] = "gpt-5-nano",
                 # Map the debugged plan to JSON-format
                 wayang_plan = plan_mapper.plan_to_json(raw_plan)
                 print("[INFO] Plan mapped by PlanMapper")
-                logger.add_message("Class: PlanMapper Mapped Debug Plan", "")
+                logger.add_message("Class: PlanMapper Mapped Debug Plan", {"version": version, "plan": wayang_plan})
                 
                 # Validate debugged plan
                 val_success, val_errors = plan_validator.validate_plan(wayang_plan)
