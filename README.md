@@ -3,7 +3,7 @@ A single-agent system for translating natural-language into executable Apache Wa
 
 The system is implemented as a MCP server that can be connected to different MCP clients, for example a LLM chatbot. The system relies on a REST server using the Apache Wayang JSON-REST API for executing plans.
 
-The system was developed as part of the Master Thesis "Agent-Based Systems for Apache Wayang Plan". For a deeper understanding of the system, we recommend reading the thesis report.
+The system was developed as part of the Master Thesis **"Agent-Based Systems for Apache Wayang Plan"**. For a deeper understanding of the system, we recommend reading the thesis report.
 
 # Start
 Start the MCP server by running the main.py file.

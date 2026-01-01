@@ -7,7 +7,7 @@ from ai_wayang_single.llm.prompt_loader import PromptLoader
 class Builder:
     """
     Builder Agent based on OpenAI's GPT-models.
-    The agents build an logical, abstract plan from natural langauge query
+    The agents build an logical, abstract plan from natural-langauge query
     """
 
     def __init__(

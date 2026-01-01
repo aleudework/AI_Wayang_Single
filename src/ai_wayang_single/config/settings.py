@@ -26,9 +26,9 @@ DEBUGGER_MODEL_CONFIG = {
 
 # Input settings
 INPUT_CONFIG = {
-    "jdbc_uri": os.getenv("JDBC_URI", "jdbc:postgresql://localhost:5432/master_thesis_db"),
-    "jdbc_username": os.getenv("JDBC_USERNAME", "master_thesis"),
-    "jdbc_password": os.getenv("JDBC_PASSWORD", "master"),
+    "jdbc_uri": os.getenv("JDBC_URI", ""),
+    "jdbc_username": os.getenv("JDBC_USERNAME", ""),
+    "jdbc_password": os.getenv("JDBC_PASSWORD", ""),
     "input_folder": os.getenv("INPUT_FOLDER", None)
 }
 

@@ -23,6 +23,7 @@ config = {
 }
 
 # Initialize agents and objects
+# We initialize agents outside the tool scope so system prompts get cached (and saves token cost)
 builder_agent = Builder() # Initialize builder agent
 debugger_agent = Debugger() # Initialize debugger agent
 plan_mapper = PlanMapper(config=config) # Initialize mapper
@@ -132,7 +133,6 @@ def query_wayang(describe_wayang_plan: str, model: Optional[str] = "gpt-5-nano",
         ### --- Debug Plan --- ###
         
         # Check if debugger should be used
-        #use_debugger = DEBUGGER_MODEL_CONFIG.get("use_debugger")
 
         # Use debugger if true
         if use_debugger == "True" and status_code != 200:
